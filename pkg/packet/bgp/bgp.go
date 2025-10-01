@@ -194,6 +194,7 @@ const (
 	EC_SUBTYPE_FLOWSPEC_TRAFFIC_REMARK ExtendedCommunityAttrSubType = 0x09 // EC_TYPE: 0x80
 	EC_SUBTYPE_L2_INFO                 ExtendedCommunityAttrSubType = 0x0A // EC_TYPE: 0x80
 	EC_SUBTYPE_FLOWSPEC_REDIRECT_IP6   ExtendedCommunityAttrSubType = 0x0B // EC_TYPE: 0x80
+	EC_SUBTYPE_FLOWSPEC_REDIRECT_IP    ExtendedCommunityAttrSubType = 0x0C // EC_TYPE: 0x80
 
 	EC_SUBTYPE_MAC_MOBILITY    ExtendedCommunityAttrSubType = 0x00 // EC_TYPE: 0x06
 	EC_SUBTYPE_ESI_LABEL       ExtendedCommunityAttrSubType = 0x01 // EC_TYPE: 0x06
@@ -13901,6 +13902,47 @@ func NewTrafficRemarkExtended(dscp uint8) *TrafficRemarkExtended {
 	}
 }
 
+type RedirectIPExtended struct {
+	IPv4 net.IP
+}
+
+func (e *RedirectIPExtended) Serialize() ([]byte, error) {
+	buf := make([]byte, 8)
+	buf[0] = byte(EC_TYPE_GENERIC_TRANSITIVE_EXPERIMENTAL)
+	buf[1] = byte(EC_SUBTYPE_FLOWSPEC_REDIRECT_IP)
+	if e.IPv4.To4() != nil {
+		copy(buf[2:6], e.IPv4.To4())
+	} else {
+		return nil, fmt.Errorf("invalid IPv4 address for redirect-IP extended community")
+	}
+	return buf, nil
+}
+
+func (e *RedirectIPExtended) String() string {
+	return fmt.Sprintf("redirect-IP: %s", e.IPv4.String())
+}
+
+func (e *RedirectIPExtended) MarshalJSON() ([]byte, error) {
+	t, s := e.GetTypes()
+	return json.Marshal(struct {
+		Type    ExtendedCommunityAttrType    `json:"type"`
+		Subtype ExtendedCommunityAttrSubType `json:"subtype"`
+		Value   string                       `json:"value"`
+	}{t, s, e.IPv4.String()})
+}
+
+func (e *RedirectIPExtended) GetTypes() (ExtendedCommunityAttrType, ExtendedCommunityAttrSubType) {
+	return EC_TYPE_GENERIC_TRANSITIVE_EXPERIMENTAL, EC_SUBTYPE_FLOWSPEC_REDIRECT_IP
+}
+
+func NewRedirectIPExtended(ipv4 string) *RedirectIPExtended {
+	ip := net.ParseIP(ipv4)
+	if ip == nil || ip.To4() == nil {
+		return nil
+	}
+	return &RedirectIPExtended{IPv4: ip.To4()}
+}
+
 func parseGenericTransitiveExperimentalExtended(data []byte) (ExtendedCommunityInterface, error) {
 	typ := ExtendedCommunityAttrType(data[0])
 	if typ != EC_TYPE_GENERIC_TRANSITIVE_EXPERIMENTAL && typ != EC_TYPE_GENERIC_TRANSITIVE_EXPERIMENTAL2 && typ != EC_TYPE_GENERIC_TRANSITIVE_EXPERIMENTAL3 {
@@ -13936,6 +13978,10 @@ func parseGenericTransitiveExperimentalExtended(data []byte) (ExtendedCommunityI
 	case EC_SUBTYPE_FLOWSPEC_TRAFFIC_REMARK:
 		dscp := data[7]
 		return NewTrafficRemarkExtended(dscp), nil
+	case EC_SUBTYPE_FLOWSPEC_REDIRECT_IP:
+		// draft-ietf-idr-flowspec-redirect-ip
+		ipv4 := net.IP(data[2:6]).String()
+		return NewRedirectIPExtended(ipv4), nil
 	case EC_SUBTYPE_FLOWSPEC_REDIRECT_IP6:
 		if len(data) < 20 {
 			return nil, NewMessageError(BGP_ERROR_UPDATE_MESSAGE_ERROR, BGP_ERROR_SUB_MALFORMED_ATTRIBUTE_LIST, nil, "not all extended community bytes for IPv6 FlowSpec are available")
@@ -16265,6 +16311,10 @@ func (e *TrafficRateExtended) Flat() map[string]string {
 }
 
 func (e *TrafficRemarkExtended) Flat() map[string]string {
+	return map[string]string{}
+}
+
+func (e *RedirectIPExtended) Flat() map[string]string {
 	return map[string]string{}
 }
 
