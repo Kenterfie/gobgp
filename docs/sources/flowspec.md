@@ -493,10 +493,10 @@ $ gobgp global rib -a ipv4-flowspec
 *> [destination: 10.0.0.0/24] fictitious                                00:00:00   [{Origin: ?} {Extcomms: [redirect: 200.200:100]}]
 
 # with redirect to IP (draft-ietf-idr-flowspec-redirect-ip)
-$ gobgp global rib -a ipv4-flowspec add match destination 10.0.0.0/24 then redirect-IP 192.168.1.1
+$ gobgp global rib -a ipv4-flowspec add match destination 10.0.0.0/24 then redirect-ip 192.168.1.1
 $ gobgp global rib -a ipv4-flowspec
    Network                    Next Hop             AS_PATH              Age        Attrs
-*> [destination: 10.0.0.0/24] fictitious                                00:00:00   [{Origin: ?} {Extcomms: [redirect-IP: 192.168.1.1]}]
+*> [destination: 10.0.0.0/24] fictitious                                00:00:00   [{Origin: ?} {Extcomms: [redirect-ip: 192.168.1.1]}]
 ```
 
 #### Example - mark

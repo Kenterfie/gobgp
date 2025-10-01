@@ -586,7 +586,7 @@ func Test_RedirectIPExtended(t *testing.T) {
 	
 	// Test string representation
 	redirectIP := NewRedirectIPExtended("10.0.0.1")
-	assert.Equal("redirect-IP: 10.0.0.1", redirectIP.String())
+	assert.Equal("redirect-ip: 10.0.0.1", redirectIP.String())
 }
 
 func Test_IP6FlowSpecExtended(t *testing.T) {

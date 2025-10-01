@@ -13913,13 +13913,13 @@ func (e *RedirectIPExtended) Serialize() ([]byte, error) {
 	if e.IPv4.To4() != nil {
 		copy(buf[2:6], e.IPv4.To4())
 	} else {
-		return nil, fmt.Errorf("invalid IPv4 address for redirect-IP extended community")
+		return nil, fmt.Errorf("invalid IPv4 address for redirect-ip extended community")
 	}
 	return buf, nil
 }
 
 func (e *RedirectIPExtended) String() string {
-	return fmt.Sprintf("redirect-IP: %s", e.IPv4.String())
+	return fmt.Sprintf("redirect-ip: %s", e.IPv4.String())
 }
 
 func (e *RedirectIPExtended) MarshalJSON() ([]byte, error) {
