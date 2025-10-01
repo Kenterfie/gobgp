@@ -67,7 +67,7 @@ var extCommNameMap = map[extCommType]string{
 	ctDiscard:        "discard",
 	ctRate:           "rate-limit",
 	ctRedirect:       "redirect",
-	ctRedirectIP:     "redirect-IP",
+	ctRedirectIP:     "redirect-ip",
 	ctMark:           "mark",
 	ctAction:         "action",
 	ctRT:             "rt",
@@ -158,12 +158,12 @@ func redirectParser(args []string) ([]bgp.ExtendedCommunityInterface, error) {
 
 func redirectIPParser(args []string) ([]bgp.ExtendedCommunityInterface, error) {
 	if len(args) < 2 || args[0] != extCommNameMap[ctRedirectIP] {
-		return nil, fmt.Errorf("invalid redirect-IP")
+		return nil, fmt.Errorf("invalid redirect-ip")
 	}
 	ip := args[1]
 	// Validate it's a valid IPv4 address  
 	if net.ParseIP(ip) == nil || net.ParseIP(ip).To4() == nil {
-		return nil, fmt.Errorf("invalid IPv4 address for redirect-IP: %s", ip)
+		return nil, fmt.Errorf("invalid IPv4 address for redirect-ip: %s", ip)
 	}
 	return []bgp.ExtendedCommunityInterface{bgp.NewRedirectIPExtended(ip)}, nil
 }

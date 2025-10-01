@@ -152,25 +152,24 @@ func Test_ParseLsLinkPathDelayMetricTLVsMinGreaterThanMax(t *testing.T) {
 func Test_RedirectIPParser(t *testing.T) {
 	assert := assert.New(t)
 
-	// Test valid redirect-IP parsing
-	args := []string{"redirect-IP", "192.168.1.1"}
+	// Test valid redirect-ip parsing
+	args := []string{"redirect-ip", "192.168.1.1"}
 	extcomms, err := redirectIPParser(args)
 	assert.Nil(err)
 	assert.Equal(1, len(extcomms))
-	assert.Equal("redirect-IP: 192.168.1.1", extcomms[0].String())
-
+	assert.Equal("redirect-ip: 192.168.1.1", extcomms[0].String())
 	// Test invalid arguments
-	args = []string{"redirect-IP"}
+	args = []string{"redirect-ip"}
 	extcomms, err = redirectIPParser(args)
 	assert.NotNil(err)
 
 	// Test invalid IP address
-	args = []string{"redirect-IP", "invalid-ip"}
+	args = []string{"redirect-ip", "invalid-ip"}
 	extcomms, err = redirectIPParser(args)
 	assert.NotNil(err)
 
 	// Test IPv6 address (should fail for now since we only support IPv4)
-	args = []string{"redirect-IP", "2001:db8::1"}
+	args = []string{"redirect-ip", "2001:db8::1"}
 	extcomms, err = redirectIPParser(args)
 	assert.NotNil(err)
 }
@@ -178,16 +177,16 @@ func Test_RedirectIPParser(t *testing.T) {
 func Test_RedirectIPIntegration(t *testing.T) {
 	assert := assert.New(t)
 	
-	// Test integration: parsing a FlowSpec route with redirect-IP action
+	// Test integration: parsing a FlowSpec route with redirect-ip action
 	args := []string{
 		"match", "destination", "10.0.0.0/24",
-		"then", "redirect-IP", "192.168.1.1",
+		"then", "redirect-ip", "192.168.1.1",
 	}
 	
 	nlri, extcomms, err := parseFlowSpecArgs(bgp.RF_FS_IPv4_UC, args)
 	assert.Nil(err)
 	assert.NotNil(nlri)
-	assert.Equal(2, len(extcomms)) // "then" and "redirect-IP" and "192.168.1.1"
+	assert.Equal(2, len(extcomms)) // "then" and "redirect-ip" and "192.168.1.1"
 	
 	// Create a path and verify it serializes correctly
 	path, err := parsePath(bgp.RF_FS_IPv4_UC, args)
