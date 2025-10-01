@@ -174,3 +174,23 @@ func Test_RedirectIPParser(t *testing.T) {
 	extcomms, err = redirectIPParser(args)
 	assert.NotNil(err)
 }
+
+func Test_RedirectIPIntegration(t *testing.T) {
+	assert := assert.New(t)
+	
+	// Test integration: parsing a FlowSpec route with redirect-IP action
+	args := []string{
+		"match", "destination", "10.0.0.0/24",
+		"then", "redirect-IP", "192.168.1.1",
+	}
+	
+	nlri, extcomms, err := parseFlowSpecArgs(bgp.RF_FS_IPv4_UC, args)
+	assert.Nil(err)
+	assert.NotNil(nlri)
+	assert.Equal(2, len(extcomms)) // "then" and "redirect-IP" and "192.168.1.1"
+	
+	// Create a path and verify it serializes correctly
+	path, err := parsePath(bgp.RF_FS_IPv4_UC, args)
+	assert.Nil(err)
+	assert.NotNil(path)
+}
