@@ -2812,6 +2812,50 @@ func (x *RedirectIPv6AddressSpecificExtended) GetLocalAdmin() uint32 {
 	return 0
 }
 
+type RedirectIPExtended struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Address       string                 `protobuf:"bytes,1,opt,name=address,proto3" json:"address,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *RedirectIPExtended) Reset() {
+	*x = RedirectIPExtended{}
+	mi := &file_api_attribute_proto_msgTypes[41]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *RedirectIPExtended) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RedirectIPExtended) ProtoMessage() {}
+
+func (x *RedirectIPExtended) ProtoReflect() protoreflect.Message {
+	mi := &file_api_attribute_proto_msgTypes[41]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RedirectIPExtended.ProtoReflect.Descriptor instead.
+func (*RedirectIPExtended) Descriptor() ([]byte, []int) {
+	return file_api_attribute_proto_rawDescGZIP(), []int{41}
+}
+
+func (x *RedirectIPExtended) GetAddress() string {
+	if x != nil {
+		return x.Address
+	}
+	return ""
+}
+
 type IP6ExtendedCommunitiesAttribute struct {
 	state         protoimpl.MessageState                       `protogen:"open.v1"`
 	Communities   []*IP6ExtendedCommunitiesAttribute_Community `protobuf:"bytes,1,rep,name=communities,proto3" json:"communities,omitempty"`
@@ -2821,7 +2865,7 @@ type IP6ExtendedCommunitiesAttribute struct {
 
 func (x *IP6ExtendedCommunitiesAttribute) Reset() {
 	*x = IP6ExtendedCommunitiesAttribute{}
-	mi := &file_api_attribute_proto_msgTypes[41]
+	mi := &file_api_attribute_proto_msgTypes[42]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2833,7 +2877,7 @@ func (x *IP6ExtendedCommunitiesAttribute) String() string {
 func (*IP6ExtendedCommunitiesAttribute) ProtoMessage() {}
 
 func (x *IP6ExtendedCommunitiesAttribute) ProtoReflect() protoreflect.Message {
-	mi := &file_api_attribute_proto_msgTypes[41]
+	mi := &file_api_attribute_proto_msgTypes[42]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2846,7 +2890,7 @@ func (x *IP6ExtendedCommunitiesAttribute) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use IP6ExtendedCommunitiesAttribute.ProtoReflect.Descriptor instead.
 func (*IP6ExtendedCommunitiesAttribute) Descriptor() ([]byte, []int) {
-	return file_api_attribute_proto_rawDescGZIP(), []int{41}
+	return file_api_attribute_proto_rawDescGZIP(), []int{42}
 }
 
 func (x *IP6ExtendedCommunitiesAttribute) GetCommunities() []*IP6ExtendedCommunitiesAttribute_Community {
@@ -2865,7 +2909,7 @@ type AigpTLVIGPMetric struct {
 
 func (x *AigpTLVIGPMetric) Reset() {
 	*x = AigpTLVIGPMetric{}
-	mi := &file_api_attribute_proto_msgTypes[42]
+	mi := &file_api_attribute_proto_msgTypes[43]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2877,7 +2921,7 @@ func (x *AigpTLVIGPMetric) String() string {
 func (*AigpTLVIGPMetric) ProtoMessage() {}
 
 func (x *AigpTLVIGPMetric) ProtoReflect() protoreflect.Message {
-	mi := &file_api_attribute_proto_msgTypes[42]
+	mi := &file_api_attribute_proto_msgTypes[43]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2890,7 +2934,7 @@ func (x *AigpTLVIGPMetric) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AigpTLVIGPMetric.ProtoReflect.Descriptor instead.
 func (*AigpTLVIGPMetric) Descriptor() ([]byte, []int) {
-	return file_api_attribute_proto_rawDescGZIP(), []int{42}
+	return file_api_attribute_proto_rawDescGZIP(), []int{43}
 }
 
 func (x *AigpTLVIGPMetric) GetMetric() uint64 {
@@ -2910,7 +2954,7 @@ type AigpTLVUnknown struct {
 
 func (x *AigpTLVUnknown) Reset() {
 	*x = AigpTLVUnknown{}
-	mi := &file_api_attribute_proto_msgTypes[43]
+	mi := &file_api_attribute_proto_msgTypes[44]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2922,7 +2966,7 @@ func (x *AigpTLVUnknown) String() string {
 func (*AigpTLVUnknown) ProtoMessage() {}
 
 func (x *AigpTLVUnknown) ProtoReflect() protoreflect.Message {
-	mi := &file_api_attribute_proto_msgTypes[43]
+	mi := &file_api_attribute_proto_msgTypes[44]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2935,7 +2979,7 @@ func (x *AigpTLVUnknown) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AigpTLVUnknown.ProtoReflect.Descriptor instead.
 func (*AigpTLVUnknown) Descriptor() ([]byte, []int) {
-	return file_api_attribute_proto_rawDescGZIP(), []int{43}
+	return file_api_attribute_proto_rawDescGZIP(), []int{44}
 }
 
 func (x *AigpTLVUnknown) GetType() uint32 {
@@ -2961,7 +3005,7 @@ type AigpAttribute struct {
 
 func (x *AigpAttribute) Reset() {
 	*x = AigpAttribute{}
-	mi := &file_api_attribute_proto_msgTypes[44]
+	mi := &file_api_attribute_proto_msgTypes[45]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2973,7 +3017,7 @@ func (x *AigpAttribute) String() string {
 func (*AigpAttribute) ProtoMessage() {}
 
 func (x *AigpAttribute) ProtoReflect() protoreflect.Message {
-	mi := &file_api_attribute_proto_msgTypes[44]
+	mi := &file_api_attribute_proto_msgTypes[45]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2986,7 +3030,7 @@ func (x *AigpAttribute) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AigpAttribute.ProtoReflect.Descriptor instead.
 func (*AigpAttribute) Descriptor() ([]byte, []int) {
-	return file_api_attribute_proto_rawDescGZIP(), []int{44}
+	return file_api_attribute_proto_rawDescGZIP(), []int{45}
 }
 
 func (x *AigpAttribute) GetTlvs() []*AigpAttribute_TLV {
@@ -3007,7 +3051,7 @@ type LargeCommunity struct {
 
 func (x *LargeCommunity) Reset() {
 	*x = LargeCommunity{}
-	mi := &file_api_attribute_proto_msgTypes[45]
+	mi := &file_api_attribute_proto_msgTypes[46]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3019,7 +3063,7 @@ func (x *LargeCommunity) String() string {
 func (*LargeCommunity) ProtoMessage() {}
 
 func (x *LargeCommunity) ProtoReflect() protoreflect.Message {
-	mi := &file_api_attribute_proto_msgTypes[45]
+	mi := &file_api_attribute_proto_msgTypes[46]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3032,7 +3076,7 @@ func (x *LargeCommunity) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use LargeCommunity.ProtoReflect.Descriptor instead.
 func (*LargeCommunity) Descriptor() ([]byte, []int) {
-	return file_api_attribute_proto_rawDescGZIP(), []int{45}
+	return file_api_attribute_proto_rawDescGZIP(), []int{46}
 }
 
 func (x *LargeCommunity) GetGlobalAdmin() uint32 {
@@ -3065,7 +3109,7 @@ type LargeCommunitiesAttribute struct {
 
 func (x *LargeCommunitiesAttribute) Reset() {
 	*x = LargeCommunitiesAttribute{}
-	mi := &file_api_attribute_proto_msgTypes[46]
+	mi := &file_api_attribute_proto_msgTypes[47]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3077,7 +3121,7 @@ func (x *LargeCommunitiesAttribute) String() string {
 func (*LargeCommunitiesAttribute) ProtoMessage() {}
 
 func (x *LargeCommunitiesAttribute) ProtoReflect() protoreflect.Message {
-	mi := &file_api_attribute_proto_msgTypes[46]
+	mi := &file_api_attribute_proto_msgTypes[47]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3090,7 +3134,7 @@ func (x *LargeCommunitiesAttribute) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use LargeCommunitiesAttribute.ProtoReflect.Descriptor instead.
 func (*LargeCommunitiesAttribute) Descriptor() ([]byte, []int) {
-	return file_api_attribute_proto_rawDescGZIP(), []int{46}
+	return file_api_attribute_proto_rawDescGZIP(), []int{47}
 }
 
 func (x *LargeCommunitiesAttribute) GetCommunities() []*LargeCommunity {
@@ -3114,7 +3158,7 @@ type LsNodeFlags struct {
 
 func (x *LsNodeFlags) Reset() {
 	*x = LsNodeFlags{}
-	mi := &file_api_attribute_proto_msgTypes[47]
+	mi := &file_api_attribute_proto_msgTypes[48]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3126,7 +3170,7 @@ func (x *LsNodeFlags) String() string {
 func (*LsNodeFlags) ProtoMessage() {}
 
 func (x *LsNodeFlags) ProtoReflect() protoreflect.Message {
-	mi := &file_api_attribute_proto_msgTypes[47]
+	mi := &file_api_attribute_proto_msgTypes[48]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3139,7 +3183,7 @@ func (x *LsNodeFlags) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use LsNodeFlags.ProtoReflect.Descriptor instead.
 func (*LsNodeFlags) Descriptor() ([]byte, []int) {
-	return file_api_attribute_proto_rawDescGZIP(), []int{47}
+	return file_api_attribute_proto_rawDescGZIP(), []int{48}
 }
 
 func (x *LsNodeFlags) GetOverload() bool {
@@ -3196,7 +3240,7 @@ type LsIGPFlags struct {
 
 func (x *LsIGPFlags) Reset() {
 	*x = LsIGPFlags{}
-	mi := &file_api_attribute_proto_msgTypes[48]
+	mi := &file_api_attribute_proto_msgTypes[49]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3208,7 +3252,7 @@ func (x *LsIGPFlags) String() string {
 func (*LsIGPFlags) ProtoMessage() {}
 
 func (x *LsIGPFlags) ProtoReflect() protoreflect.Message {
-	mi := &file_api_attribute_proto_msgTypes[48]
+	mi := &file_api_attribute_proto_msgTypes[49]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3221,7 +3265,7 @@ func (x *LsIGPFlags) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use LsIGPFlags.ProtoReflect.Descriptor instead.
 func (*LsIGPFlags) Descriptor() ([]byte, []int) {
-	return file_api_attribute_proto_rawDescGZIP(), []int{48}
+	return file_api_attribute_proto_rawDescGZIP(), []int{49}
 }
 
 func (x *LsIGPFlags) GetDown() bool {
@@ -3262,7 +3306,7 @@ type LsSrRange struct {
 
 func (x *LsSrRange) Reset() {
 	*x = LsSrRange{}
-	mi := &file_api_attribute_proto_msgTypes[49]
+	mi := &file_api_attribute_proto_msgTypes[50]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3274,7 +3318,7 @@ func (x *LsSrRange) String() string {
 func (*LsSrRange) ProtoMessage() {}
 
 func (x *LsSrRange) ProtoReflect() protoreflect.Message {
-	mi := &file_api_attribute_proto_msgTypes[49]
+	mi := &file_api_attribute_proto_msgTypes[50]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3287,7 +3331,7 @@ func (x *LsSrRange) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use LsSrRange.ProtoReflect.Descriptor instead.
 func (*LsSrRange) Descriptor() ([]byte, []int) {
-	return file_api_attribute_proto_rawDescGZIP(), []int{49}
+	return file_api_attribute_proto_rawDescGZIP(), []int{50}
 }
 
 func (x *LsSrRange) GetBegin() uint32 {
@@ -3315,7 +3359,7 @@ type LsSrCapabilities struct {
 
 func (x *LsSrCapabilities) Reset() {
 	*x = LsSrCapabilities{}
-	mi := &file_api_attribute_proto_msgTypes[50]
+	mi := &file_api_attribute_proto_msgTypes[51]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3327,7 +3371,7 @@ func (x *LsSrCapabilities) String() string {
 func (*LsSrCapabilities) ProtoMessage() {}
 
 func (x *LsSrCapabilities) ProtoReflect() protoreflect.Message {
-	mi := &file_api_attribute_proto_msgTypes[50]
+	mi := &file_api_attribute_proto_msgTypes[51]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3340,7 +3384,7 @@ func (x *LsSrCapabilities) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use LsSrCapabilities.ProtoReflect.Descriptor instead.
 func (*LsSrCapabilities) Descriptor() ([]byte, []int) {
-	return file_api_attribute_proto_rawDescGZIP(), []int{50}
+	return file_api_attribute_proto_rawDescGZIP(), []int{51}
 }
 
 func (x *LsSrCapabilities) GetIpv4Supported() bool {
@@ -3373,7 +3417,7 @@ type LsSrLocalBlock struct {
 
 func (x *LsSrLocalBlock) Reset() {
 	*x = LsSrLocalBlock{}
-	mi := &file_api_attribute_proto_msgTypes[51]
+	mi := &file_api_attribute_proto_msgTypes[52]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3385,7 +3429,7 @@ func (x *LsSrLocalBlock) String() string {
 func (*LsSrLocalBlock) ProtoMessage() {}
 
 func (x *LsSrLocalBlock) ProtoReflect() protoreflect.Message {
-	mi := &file_api_attribute_proto_msgTypes[51]
+	mi := &file_api_attribute_proto_msgTypes[52]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3398,7 +3442,7 @@ func (x *LsSrLocalBlock) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use LsSrLocalBlock.ProtoReflect.Descriptor instead.
 func (*LsSrLocalBlock) Descriptor() ([]byte, []int) {
-	return file_api_attribute_proto_rawDescGZIP(), []int{51}
+	return file_api_attribute_proto_rawDescGZIP(), []int{52}
 }
 
 func (x *LsSrLocalBlock) GetRanges() []*LsSrRange {
@@ -3425,7 +3469,7 @@ type LsAttributeNode struct {
 
 func (x *LsAttributeNode) Reset() {
 	*x = LsAttributeNode{}
-	mi := &file_api_attribute_proto_msgTypes[52]
+	mi := &file_api_attribute_proto_msgTypes[53]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3437,7 +3481,7 @@ func (x *LsAttributeNode) String() string {
 func (*LsAttributeNode) ProtoMessage() {}
 
 func (x *LsAttributeNode) ProtoReflect() protoreflect.Message {
-	mi := &file_api_attribute_proto_msgTypes[52]
+	mi := &file_api_attribute_proto_msgTypes[53]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3450,7 +3494,7 @@ func (x *LsAttributeNode) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use LsAttributeNode.ProtoReflect.Descriptor instead.
 func (*LsAttributeNode) Descriptor() ([]byte, []int) {
-	return file_api_attribute_proto_rawDescGZIP(), []int{52}
+	return file_api_attribute_proto_rawDescGZIP(), []int{53}
 }
 
 func (x *LsAttributeNode) GetName() string {
@@ -3546,7 +3590,7 @@ type LsAttributeLink struct {
 
 func (x *LsAttributeLink) Reset() {
 	*x = LsAttributeLink{}
-	mi := &file_api_attribute_proto_msgTypes[53]
+	mi := &file_api_attribute_proto_msgTypes[54]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3558,7 +3602,7 @@ func (x *LsAttributeLink) String() string {
 func (*LsAttributeLink) ProtoMessage() {}
 
 func (x *LsAttributeLink) ProtoReflect() protoreflect.Message {
-	mi := &file_api_attribute_proto_msgTypes[53]
+	mi := &file_api_attribute_proto_msgTypes[54]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3571,7 +3615,7 @@ func (x *LsAttributeLink) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use LsAttributeLink.ProtoReflect.Descriptor instead.
 func (*LsAttributeLink) Descriptor() ([]byte, []int) {
-	return file_api_attribute_proto_rawDescGZIP(), []int{53}
+	return file_api_attribute_proto_rawDescGZIP(), []int{54}
 }
 
 func (x *LsAttributeLink) GetName() string {
@@ -3732,7 +3776,7 @@ type LsAttributePrefix struct {
 
 func (x *LsAttributePrefix) Reset() {
 	*x = LsAttributePrefix{}
-	mi := &file_api_attribute_proto_msgTypes[54]
+	mi := &file_api_attribute_proto_msgTypes[55]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3744,7 +3788,7 @@ func (x *LsAttributePrefix) String() string {
 func (*LsAttributePrefix) ProtoMessage() {}
 
 func (x *LsAttributePrefix) ProtoReflect() protoreflect.Message {
-	mi := &file_api_attribute_proto_msgTypes[54]
+	mi := &file_api_attribute_proto_msgTypes[55]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3757,7 +3801,7 @@ func (x *LsAttributePrefix) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use LsAttributePrefix.ProtoReflect.Descriptor instead.
 func (*LsAttributePrefix) Descriptor() ([]byte, []int) {
-	return file_api_attribute_proto_rawDescGZIP(), []int{54}
+	return file_api_attribute_proto_rawDescGZIP(), []int{55}
 }
 
 func (x *LsAttributePrefix) GetIgpFlags() *LsIGPFlags {
@@ -3793,7 +3837,7 @@ type LsBgpPeerSegmentSIDFlags struct {
 
 func (x *LsBgpPeerSegmentSIDFlags) Reset() {
 	*x = LsBgpPeerSegmentSIDFlags{}
-	mi := &file_api_attribute_proto_msgTypes[55]
+	mi := &file_api_attribute_proto_msgTypes[56]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3805,7 +3849,7 @@ func (x *LsBgpPeerSegmentSIDFlags) String() string {
 func (*LsBgpPeerSegmentSIDFlags) ProtoMessage() {}
 
 func (x *LsBgpPeerSegmentSIDFlags) ProtoReflect() protoreflect.Message {
-	mi := &file_api_attribute_proto_msgTypes[55]
+	mi := &file_api_attribute_proto_msgTypes[56]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3818,7 +3862,7 @@ func (x *LsBgpPeerSegmentSIDFlags) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use LsBgpPeerSegmentSIDFlags.ProtoReflect.Descriptor instead.
 func (*LsBgpPeerSegmentSIDFlags) Descriptor() ([]byte, []int) {
-	return file_api_attribute_proto_rawDescGZIP(), []int{55}
+	return file_api_attribute_proto_rawDescGZIP(), []int{56}
 }
 
 func (x *LsBgpPeerSegmentSIDFlags) GetValue() bool {
@@ -3860,7 +3904,7 @@ type LsBgpPeerSegmentSID struct {
 
 func (x *LsBgpPeerSegmentSID) Reset() {
 	*x = LsBgpPeerSegmentSID{}
-	mi := &file_api_attribute_proto_msgTypes[56]
+	mi := &file_api_attribute_proto_msgTypes[57]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3872,7 +3916,7 @@ func (x *LsBgpPeerSegmentSID) String() string {
 func (*LsBgpPeerSegmentSID) ProtoMessage() {}
 
 func (x *LsBgpPeerSegmentSID) ProtoReflect() protoreflect.Message {
-	mi := &file_api_attribute_proto_msgTypes[56]
+	mi := &file_api_attribute_proto_msgTypes[57]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3885,7 +3929,7 @@ func (x *LsBgpPeerSegmentSID) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use LsBgpPeerSegmentSID.ProtoReflect.Descriptor instead.
 func (*LsBgpPeerSegmentSID) Descriptor() ([]byte, []int) {
-	return file_api_attribute_proto_rawDescGZIP(), []int{56}
+	return file_api_attribute_proto_rawDescGZIP(), []int{57}
 }
 
 func (x *LsBgpPeerSegmentSID) GetFlags() *LsBgpPeerSegmentSIDFlags {
@@ -3920,7 +3964,7 @@ type LsAttributeBgpPeerSegment struct {
 
 func (x *LsAttributeBgpPeerSegment) Reset() {
 	*x = LsAttributeBgpPeerSegment{}
-	mi := &file_api_attribute_proto_msgTypes[57]
+	mi := &file_api_attribute_proto_msgTypes[58]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3932,7 +3976,7 @@ func (x *LsAttributeBgpPeerSegment) String() string {
 func (*LsAttributeBgpPeerSegment) ProtoMessage() {}
 
 func (x *LsAttributeBgpPeerSegment) ProtoReflect() protoreflect.Message {
-	mi := &file_api_attribute_proto_msgTypes[57]
+	mi := &file_api_attribute_proto_msgTypes[58]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3945,7 +3989,7 @@ func (x *LsAttributeBgpPeerSegment) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use LsAttributeBgpPeerSegment.ProtoReflect.Descriptor instead.
 func (*LsAttributeBgpPeerSegment) Descriptor() ([]byte, []int) {
-	return file_api_attribute_proto_rawDescGZIP(), []int{57}
+	return file_api_attribute_proto_rawDescGZIP(), []int{58}
 }
 
 func (x *LsAttributeBgpPeerSegment) GetBgpPeerNodeSid() *LsBgpPeerSegmentSID {
@@ -3984,7 +4028,7 @@ type LsSrv6EndXSID struct {
 
 func (x *LsSrv6EndXSID) Reset() {
 	*x = LsSrv6EndXSID{}
-	mi := &file_api_attribute_proto_msgTypes[58]
+	mi := &file_api_attribute_proto_msgTypes[59]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3996,7 +4040,7 @@ func (x *LsSrv6EndXSID) String() string {
 func (*LsSrv6EndXSID) ProtoMessage() {}
 
 func (x *LsSrv6EndXSID) ProtoReflect() protoreflect.Message {
-	mi := &file_api_attribute_proto_msgTypes[58]
+	mi := &file_api_attribute_proto_msgTypes[59]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4009,7 +4053,7 @@ func (x *LsSrv6EndXSID) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use LsSrv6EndXSID.ProtoReflect.Descriptor instead.
 func (*LsSrv6EndXSID) Descriptor() ([]byte, []int) {
-	return file_api_attribute_proto_rawDescGZIP(), []int{58}
+	return file_api_attribute_proto_rawDescGZIP(), []int{59}
 }
 
 func (x *LsSrv6EndXSID) GetEndpointBehavior() uint32 {
@@ -4073,7 +4117,7 @@ type LsSrv6SIDStructure struct {
 
 func (x *LsSrv6SIDStructure) Reset() {
 	*x = LsSrv6SIDStructure{}
-	mi := &file_api_attribute_proto_msgTypes[59]
+	mi := &file_api_attribute_proto_msgTypes[60]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -4085,7 +4129,7 @@ func (x *LsSrv6SIDStructure) String() string {
 func (*LsSrv6SIDStructure) ProtoMessage() {}
 
 func (x *LsSrv6SIDStructure) ProtoReflect() protoreflect.Message {
-	mi := &file_api_attribute_proto_msgTypes[59]
+	mi := &file_api_attribute_proto_msgTypes[60]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4098,7 +4142,7 @@ func (x *LsSrv6SIDStructure) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use LsSrv6SIDStructure.ProtoReflect.Descriptor instead.
 func (*LsSrv6SIDStructure) Descriptor() ([]byte, []int) {
-	return file_api_attribute_proto_rawDescGZIP(), []int{59}
+	return file_api_attribute_proto_rawDescGZIP(), []int{60}
 }
 
 func (x *LsSrv6SIDStructure) GetLocalBlock() uint32 {
@@ -4140,7 +4184,7 @@ type LsSrv6EndpointBehavior struct {
 
 func (x *LsSrv6EndpointBehavior) Reset() {
 	*x = LsSrv6EndpointBehavior{}
-	mi := &file_api_attribute_proto_msgTypes[60]
+	mi := &file_api_attribute_proto_msgTypes[61]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -4152,7 +4196,7 @@ func (x *LsSrv6EndpointBehavior) String() string {
 func (*LsSrv6EndpointBehavior) ProtoMessage() {}
 
 func (x *LsSrv6EndpointBehavior) ProtoReflect() protoreflect.Message {
-	mi := &file_api_attribute_proto_msgTypes[60]
+	mi := &file_api_attribute_proto_msgTypes[61]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4165,7 +4209,7 @@ func (x *LsSrv6EndpointBehavior) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use LsSrv6EndpointBehavior.ProtoReflect.Descriptor instead.
 func (*LsSrv6EndpointBehavior) Descriptor() ([]byte, []int) {
-	return file_api_attribute_proto_rawDescGZIP(), []int{60}
+	return file_api_attribute_proto_rawDescGZIP(), []int{61}
 }
 
 func (x *LsSrv6EndpointBehavior) GetEndpointBehavior() uint32 {
@@ -4201,7 +4245,7 @@ type LsSrv6BgpPeerNodeSID struct {
 
 func (x *LsSrv6BgpPeerNodeSID) Reset() {
 	*x = LsSrv6BgpPeerNodeSID{}
-	mi := &file_api_attribute_proto_msgTypes[61]
+	mi := &file_api_attribute_proto_msgTypes[62]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -4213,7 +4257,7 @@ func (x *LsSrv6BgpPeerNodeSID) String() string {
 func (*LsSrv6BgpPeerNodeSID) ProtoMessage() {}
 
 func (x *LsSrv6BgpPeerNodeSID) ProtoReflect() protoreflect.Message {
-	mi := &file_api_attribute_proto_msgTypes[61]
+	mi := &file_api_attribute_proto_msgTypes[62]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4226,7 +4270,7 @@ func (x *LsSrv6BgpPeerNodeSID) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use LsSrv6BgpPeerNodeSID.ProtoReflect.Descriptor instead.
 func (*LsSrv6BgpPeerNodeSID) Descriptor() ([]byte, []int) {
-	return file_api_attribute_proto_rawDescGZIP(), []int{61}
+	return file_api_attribute_proto_rawDescGZIP(), []int{62}
 }
 
 func (x *LsSrv6BgpPeerNodeSID) GetFlags() uint32 {
@@ -4268,7 +4312,7 @@ type LsAttributeSrv6SID struct {
 
 func (x *LsAttributeSrv6SID) Reset() {
 	*x = LsAttributeSrv6SID{}
-	mi := &file_api_attribute_proto_msgTypes[62]
+	mi := &file_api_attribute_proto_msgTypes[63]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -4280,7 +4324,7 @@ func (x *LsAttributeSrv6SID) String() string {
 func (*LsAttributeSrv6SID) ProtoMessage() {}
 
 func (x *LsAttributeSrv6SID) ProtoReflect() protoreflect.Message {
-	mi := &file_api_attribute_proto_msgTypes[62]
+	mi := &file_api_attribute_proto_msgTypes[63]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4293,7 +4337,7 @@ func (x *LsAttributeSrv6SID) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use LsAttributeSrv6SID.ProtoReflect.Descriptor instead.
 func (*LsAttributeSrv6SID) Descriptor() ([]byte, []int) {
-	return file_api_attribute_proto_rawDescGZIP(), []int{62}
+	return file_api_attribute_proto_rawDescGZIP(), []int{63}
 }
 
 func (x *LsAttributeSrv6SID) GetSrv6SidStructure() *LsSrv6SIDStructure {
@@ -4330,7 +4374,7 @@ type LsAttribute struct {
 
 func (x *LsAttribute) Reset() {
 	*x = LsAttribute{}
-	mi := &file_api_attribute_proto_msgTypes[63]
+	mi := &file_api_attribute_proto_msgTypes[64]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -4342,7 +4386,7 @@ func (x *LsAttribute) String() string {
 func (*LsAttribute) ProtoMessage() {}
 
 func (x *LsAttribute) ProtoReflect() protoreflect.Message {
-	mi := &file_api_attribute_proto_msgTypes[63]
+	mi := &file_api_attribute_proto_msgTypes[64]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4355,7 +4399,7 @@ func (x *LsAttribute) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use LsAttribute.ProtoReflect.Descriptor instead.
 func (*LsAttribute) Descriptor() ([]byte, []int) {
-	return file_api_attribute_proto_rawDescGZIP(), []int{63}
+	return file_api_attribute_proto_rawDescGZIP(), []int{64}
 }
 
 func (x *LsAttribute) GetNode() *LsAttributeNode {
@@ -4404,7 +4448,7 @@ type UnknownAttribute struct {
 
 func (x *UnknownAttribute) Reset() {
 	*x = UnknownAttribute{}
-	mi := &file_api_attribute_proto_msgTypes[64]
+	mi := &file_api_attribute_proto_msgTypes[65]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -4416,7 +4460,7 @@ func (x *UnknownAttribute) String() string {
 func (*UnknownAttribute) ProtoMessage() {}
 
 func (x *UnknownAttribute) ProtoReflect() protoreflect.Message {
-	mi := &file_api_attribute_proto_msgTypes[64]
+	mi := &file_api_attribute_proto_msgTypes[65]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4429,7 +4473,7 @@ func (x *UnknownAttribute) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UnknownAttribute.ProtoReflect.Descriptor instead.
 func (*UnknownAttribute) Descriptor() ([]byte, []int) {
-	return file_api_attribute_proto_rawDescGZIP(), []int{64}
+	return file_api_attribute_proto_rawDescGZIP(), []int{65}
 }
 
 func (x *UnknownAttribute) GetFlags() uint32 {
@@ -4468,7 +4512,7 @@ type SRv6StructureSubSubTLV struct {
 
 func (x *SRv6StructureSubSubTLV) Reset() {
 	*x = SRv6StructureSubSubTLV{}
-	mi := &file_api_attribute_proto_msgTypes[65]
+	mi := &file_api_attribute_proto_msgTypes[66]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -4480,7 +4524,7 @@ func (x *SRv6StructureSubSubTLV) String() string {
 func (*SRv6StructureSubSubTLV) ProtoMessage() {}
 
 func (x *SRv6StructureSubSubTLV) ProtoReflect() protoreflect.Message {
-	mi := &file_api_attribute_proto_msgTypes[65]
+	mi := &file_api_attribute_proto_msgTypes[66]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4493,7 +4537,7 @@ func (x *SRv6StructureSubSubTLV) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SRv6StructureSubSubTLV.ProtoReflect.Descriptor instead.
 func (*SRv6StructureSubSubTLV) Descriptor() ([]byte, []int) {
-	return file_api_attribute_proto_rawDescGZIP(), []int{65}
+	return file_api_attribute_proto_rawDescGZIP(), []int{66}
 }
 
 func (x *SRv6StructureSubSubTLV) GetLocatorBlockLength() uint32 {
@@ -4550,7 +4594,7 @@ type SRv6SubSubTLV struct {
 
 func (x *SRv6SubSubTLV) Reset() {
 	*x = SRv6SubSubTLV{}
-	mi := &file_api_attribute_proto_msgTypes[66]
+	mi := &file_api_attribute_proto_msgTypes[67]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -4562,7 +4606,7 @@ func (x *SRv6SubSubTLV) String() string {
 func (*SRv6SubSubTLV) ProtoMessage() {}
 
 func (x *SRv6SubSubTLV) ProtoReflect() protoreflect.Message {
-	mi := &file_api_attribute_proto_msgTypes[66]
+	mi := &file_api_attribute_proto_msgTypes[67]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4575,7 +4619,7 @@ func (x *SRv6SubSubTLV) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SRv6SubSubTLV.ProtoReflect.Descriptor instead.
 func (*SRv6SubSubTLV) Descriptor() ([]byte, []int) {
-	return file_api_attribute_proto_rawDescGZIP(), []int{66}
+	return file_api_attribute_proto_rawDescGZIP(), []int{67}
 }
 
 func (x *SRv6SubSubTLV) GetTlv() isSRv6SubSubTLV_Tlv {
@@ -4613,7 +4657,7 @@ type SRv6SubSubTLVs struct {
 
 func (x *SRv6SubSubTLVs) Reset() {
 	*x = SRv6SubSubTLVs{}
-	mi := &file_api_attribute_proto_msgTypes[67]
+	mi := &file_api_attribute_proto_msgTypes[68]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -4625,7 +4669,7 @@ func (x *SRv6SubSubTLVs) String() string {
 func (*SRv6SubSubTLVs) ProtoMessage() {}
 
 func (x *SRv6SubSubTLVs) ProtoReflect() protoreflect.Message {
-	mi := &file_api_attribute_proto_msgTypes[67]
+	mi := &file_api_attribute_proto_msgTypes[68]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4638,7 +4682,7 @@ func (x *SRv6SubSubTLVs) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SRv6SubSubTLVs.ProtoReflect.Descriptor instead.
 func (*SRv6SubSubTLVs) Descriptor() ([]byte, []int) {
-	return file_api_attribute_proto_rawDescGZIP(), []int{67}
+	return file_api_attribute_proto_rawDescGZIP(), []int{68}
 }
 
 func (x *SRv6SubSubTLVs) GetTlvs() []*SRv6SubSubTLV {
@@ -4658,7 +4702,7 @@ type SRv6SIDFlags struct {
 
 func (x *SRv6SIDFlags) Reset() {
 	*x = SRv6SIDFlags{}
-	mi := &file_api_attribute_proto_msgTypes[68]
+	mi := &file_api_attribute_proto_msgTypes[69]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -4670,7 +4714,7 @@ func (x *SRv6SIDFlags) String() string {
 func (*SRv6SIDFlags) ProtoMessage() {}
 
 func (x *SRv6SIDFlags) ProtoReflect() protoreflect.Message {
-	mi := &file_api_attribute_proto_msgTypes[68]
+	mi := &file_api_attribute_proto_msgTypes[69]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4683,7 +4727,7 @@ func (x *SRv6SIDFlags) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SRv6SIDFlags.ProtoReflect.Descriptor instead.
 func (*SRv6SIDFlags) Descriptor() ([]byte, []int) {
-	return file_api_attribute_proto_rawDescGZIP(), []int{68}
+	return file_api_attribute_proto_rawDescGZIP(), []int{69}
 }
 
 func (x *SRv6SIDFlags) GetFlag_1() bool {
@@ -4706,7 +4750,7 @@ type SRv6InformationSubTLV struct {
 
 func (x *SRv6InformationSubTLV) Reset() {
 	*x = SRv6InformationSubTLV{}
-	mi := &file_api_attribute_proto_msgTypes[69]
+	mi := &file_api_attribute_proto_msgTypes[70]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -4718,7 +4762,7 @@ func (x *SRv6InformationSubTLV) String() string {
 func (*SRv6InformationSubTLV) ProtoMessage() {}
 
 func (x *SRv6InformationSubTLV) ProtoReflect() protoreflect.Message {
-	mi := &file_api_attribute_proto_msgTypes[69]
+	mi := &file_api_attribute_proto_msgTypes[70]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4731,7 +4775,7 @@ func (x *SRv6InformationSubTLV) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SRv6InformationSubTLV.ProtoReflect.Descriptor instead.
 func (*SRv6InformationSubTLV) Descriptor() ([]byte, []int) {
-	return file_api_attribute_proto_rawDescGZIP(), []int{69}
+	return file_api_attribute_proto_rawDescGZIP(), []int{70}
 }
 
 func (x *SRv6InformationSubTLV) GetSid() []byte {
@@ -4774,7 +4818,7 @@ type SRv6SubTLV struct {
 
 func (x *SRv6SubTLV) Reset() {
 	*x = SRv6SubTLV{}
-	mi := &file_api_attribute_proto_msgTypes[70]
+	mi := &file_api_attribute_proto_msgTypes[71]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -4786,7 +4830,7 @@ func (x *SRv6SubTLV) String() string {
 func (*SRv6SubTLV) ProtoMessage() {}
 
 func (x *SRv6SubTLV) ProtoReflect() protoreflect.Message {
-	mi := &file_api_attribute_proto_msgTypes[70]
+	mi := &file_api_attribute_proto_msgTypes[71]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4799,7 +4843,7 @@ func (x *SRv6SubTLV) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SRv6SubTLV.ProtoReflect.Descriptor instead.
 func (*SRv6SubTLV) Descriptor() ([]byte, []int) {
-	return file_api_attribute_proto_rawDescGZIP(), []int{70}
+	return file_api_attribute_proto_rawDescGZIP(), []int{71}
 }
 
 func (x *SRv6SubTLV) GetTlv() isSRv6SubTLV_Tlv {
@@ -4837,7 +4881,7 @@ type SRv6SubTLVs struct {
 
 func (x *SRv6SubTLVs) Reset() {
 	*x = SRv6SubTLVs{}
-	mi := &file_api_attribute_proto_msgTypes[71]
+	mi := &file_api_attribute_proto_msgTypes[72]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -4849,7 +4893,7 @@ func (x *SRv6SubTLVs) String() string {
 func (*SRv6SubTLVs) ProtoMessage() {}
 
 func (x *SRv6SubTLVs) ProtoReflect() protoreflect.Message {
-	mi := &file_api_attribute_proto_msgTypes[71]
+	mi := &file_api_attribute_proto_msgTypes[72]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4862,7 +4906,7 @@ func (x *SRv6SubTLVs) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SRv6SubTLVs.ProtoReflect.Descriptor instead.
 func (*SRv6SubTLVs) Descriptor() ([]byte, []int) {
-	return file_api_attribute_proto_rawDescGZIP(), []int{71}
+	return file_api_attribute_proto_rawDescGZIP(), []int{72}
 }
 
 func (x *SRv6SubTLVs) GetTlvs() []*SRv6SubTLV {
@@ -4882,7 +4926,7 @@ type SRv6L3ServiceTLV struct {
 
 func (x *SRv6L3ServiceTLV) Reset() {
 	*x = SRv6L3ServiceTLV{}
-	mi := &file_api_attribute_proto_msgTypes[72]
+	mi := &file_api_attribute_proto_msgTypes[73]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -4894,7 +4938,7 @@ func (x *SRv6L3ServiceTLV) String() string {
 func (*SRv6L3ServiceTLV) ProtoMessage() {}
 
 func (x *SRv6L3ServiceTLV) ProtoReflect() protoreflect.Message {
-	mi := &file_api_attribute_proto_msgTypes[72]
+	mi := &file_api_attribute_proto_msgTypes[73]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4907,7 +4951,7 @@ func (x *SRv6L3ServiceTLV) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SRv6L3ServiceTLV.ProtoReflect.Descriptor instead.
 func (*SRv6L3ServiceTLV) Descriptor() ([]byte, []int) {
-	return file_api_attribute_proto_rawDescGZIP(), []int{72}
+	return file_api_attribute_proto_rawDescGZIP(), []int{73}
 }
 
 func (x *SRv6L3ServiceTLV) GetSubTlvs() map[uint32]*SRv6SubTLVs {
@@ -4927,7 +4971,7 @@ type SRv6L2ServiceTLV struct {
 
 func (x *SRv6L2ServiceTLV) Reset() {
 	*x = SRv6L2ServiceTLV{}
-	mi := &file_api_attribute_proto_msgTypes[73]
+	mi := &file_api_attribute_proto_msgTypes[74]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -4939,7 +4983,7 @@ func (x *SRv6L2ServiceTLV) String() string {
 func (*SRv6L2ServiceTLV) ProtoMessage() {}
 
 func (x *SRv6L2ServiceTLV) ProtoReflect() protoreflect.Message {
-	mi := &file_api_attribute_proto_msgTypes[73]
+	mi := &file_api_attribute_proto_msgTypes[74]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4952,7 +4996,7 @@ func (x *SRv6L2ServiceTLV) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SRv6L2ServiceTLV.ProtoReflect.Descriptor instead.
 func (*SRv6L2ServiceTLV) Descriptor() ([]byte, []int) {
-	return file_api_attribute_proto_rawDescGZIP(), []int{73}
+	return file_api_attribute_proto_rawDescGZIP(), []int{74}
 }
 
 func (x *SRv6L2ServiceTLV) GetSubTlvs() map[uint32]*SRv6SubTLVs {
@@ -4972,7 +5016,7 @@ type PrefixSID struct {
 
 func (x *PrefixSID) Reset() {
 	*x = PrefixSID{}
-	mi := &file_api_attribute_proto_msgTypes[74]
+	mi := &file_api_attribute_proto_msgTypes[75]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -4984,7 +5028,7 @@ func (x *PrefixSID) String() string {
 func (*PrefixSID) ProtoMessage() {}
 
 func (x *PrefixSID) ProtoReflect() protoreflect.Message {
-	mi := &file_api_attribute_proto_msgTypes[74]
+	mi := &file_api_attribute_proto_msgTypes[75]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4997,7 +5041,7 @@ func (x *PrefixSID) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use PrefixSID.ProtoReflect.Descriptor instead.
 func (*PrefixSID) Descriptor() ([]byte, []int) {
-	return file_api_attribute_proto_rawDescGZIP(), []int{74}
+	return file_api_attribute_proto_rawDescGZIP(), []int{75}
 }
 
 func (x *PrefixSID) GetTlvs() []*PrefixSID_TLV {
@@ -5020,7 +5064,7 @@ type TunnelEncapSubTLVSRSegmentList_Segment struct {
 
 func (x *TunnelEncapSubTLVSRSegmentList_Segment) Reset() {
 	*x = TunnelEncapSubTLVSRSegmentList_Segment{}
-	mi := &file_api_attribute_proto_msgTypes[75]
+	mi := &file_api_attribute_proto_msgTypes[76]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -5032,7 +5076,7 @@ func (x *TunnelEncapSubTLVSRSegmentList_Segment) String() string {
 func (*TunnelEncapSubTLVSRSegmentList_Segment) ProtoMessage() {}
 
 func (x *TunnelEncapSubTLVSRSegmentList_Segment) ProtoReflect() protoreflect.Message {
-	mi := &file_api_attribute_proto_msgTypes[75]
+	mi := &file_api_attribute_proto_msgTypes[76]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -5112,7 +5156,7 @@ type TunnelEncapTLV_TLV struct {
 
 func (x *TunnelEncapTLV_TLV) Reset() {
 	*x = TunnelEncapTLV_TLV{}
-	mi := &file_api_attribute_proto_msgTypes[76]
+	mi := &file_api_attribute_proto_msgTypes[77]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -5124,7 +5168,7 @@ func (x *TunnelEncapTLV_TLV) String() string {
 func (*TunnelEncapTLV_TLV) ProtoMessage() {}
 
 func (x *TunnelEncapTLV_TLV) ProtoReflect() protoreflect.Message {
-	mi := &file_api_attribute_proto_msgTypes[76]
+	mi := &file_api_attribute_proto_msgTypes[77]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -5344,7 +5388,7 @@ type IP6ExtendedCommunitiesAttribute_Community struct {
 
 func (x *IP6ExtendedCommunitiesAttribute_Community) Reset() {
 	*x = IP6ExtendedCommunitiesAttribute_Community{}
-	mi := &file_api_attribute_proto_msgTypes[77]
+	mi := &file_api_attribute_proto_msgTypes[78]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -5356,7 +5400,7 @@ func (x *IP6ExtendedCommunitiesAttribute_Community) String() string {
 func (*IP6ExtendedCommunitiesAttribute_Community) ProtoMessage() {}
 
 func (x *IP6ExtendedCommunitiesAttribute_Community) ProtoReflect() protoreflect.Message {
-	mi := &file_api_attribute_proto_msgTypes[77]
+	mi := &file_api_attribute_proto_msgTypes[78]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -5369,7 +5413,7 @@ func (x *IP6ExtendedCommunitiesAttribute_Community) ProtoReflect() protoreflect.
 
 // Deprecated: Use IP6ExtendedCommunitiesAttribute_Community.ProtoReflect.Descriptor instead.
 func (*IP6ExtendedCommunitiesAttribute_Community) Descriptor() ([]byte, []int) {
-	return file_api_attribute_proto_rawDescGZIP(), []int{41, 0}
+	return file_api_attribute_proto_rawDescGZIP(), []int{42, 0}
 }
 
 func (x *IP6ExtendedCommunitiesAttribute_Community) GetExtcom() isIP6ExtendedCommunitiesAttribute_Community_Extcom {
@@ -5428,7 +5472,7 @@ type AigpAttribute_TLV struct {
 
 func (x *AigpAttribute_TLV) Reset() {
 	*x = AigpAttribute_TLV{}
-	mi := &file_api_attribute_proto_msgTypes[78]
+	mi := &file_api_attribute_proto_msgTypes[79]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -5440,7 +5484,7 @@ func (x *AigpAttribute_TLV) String() string {
 func (*AigpAttribute_TLV) ProtoMessage() {}
 
 func (x *AigpAttribute_TLV) ProtoReflect() protoreflect.Message {
-	mi := &file_api_attribute_proto_msgTypes[78]
+	mi := &file_api_attribute_proto_msgTypes[79]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -5453,7 +5497,7 @@ func (x *AigpAttribute_TLV) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AigpAttribute_TLV.ProtoReflect.Descriptor instead.
 func (*AigpAttribute_TLV) Descriptor() ([]byte, []int) {
-	return file_api_attribute_proto_rawDescGZIP(), []int{44, 0}
+	return file_api_attribute_proto_rawDescGZIP(), []int{45, 0}
 }
 
 func (x *AigpAttribute_TLV) GetTlv() isAigpAttribute_TLV_Tlv {
@@ -5511,7 +5555,7 @@ type PrefixSID_TLV struct {
 
 func (x *PrefixSID_TLV) Reset() {
 	*x = PrefixSID_TLV{}
-	mi := &file_api_attribute_proto_msgTypes[82]
+	mi := &file_api_attribute_proto_msgTypes[83]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -5523,7 +5567,7 @@ func (x *PrefixSID_TLV) String() string {
 func (*PrefixSID_TLV) ProtoMessage() {}
 
 func (x *PrefixSID_TLV) ProtoReflect() protoreflect.Message {
-	mi := &file_api_attribute_proto_msgTypes[82]
+	mi := &file_api_attribute_proto_msgTypes[83]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -5536,7 +5580,7 @@ func (x *PrefixSID_TLV) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use PrefixSID_TLV.ProtoReflect.Descriptor instead.
 func (*PrefixSID_TLV) Descriptor() ([]byte, []int) {
-	return file_api_attribute_proto_rawDescGZIP(), []int{74, 0}
+	return file_api_attribute_proto_rawDescGZIP(), []int{75, 0}
 }
 
 func (x *PrefixSID_TLV) GetTlv() isPrefixSID_TLV_Tlv {
@@ -5766,7 +5810,9 @@ const file_api_attribute_proto_rawDesc = "" +
 	"#RedirectIPv6AddressSpecificExtended\x12\x18\n" +
 	"\aaddress\x18\x01 \x01(\tR\aaddress\x12\x1f\n" +
 	"\vlocal_admin\x18\x02 \x01(\rR\n" +
-	"localAdmin\"\xd4\x02\n" +
+	"localAdmin\".\n" +
+	"\x12RedirectIPExtended\x12\x18\n" +
+	"\aaddress\x18\x01 \x01(\tR\aaddress\"\xd4\x02\n" +
 	"\x1fIP6ExtendedCommunitiesAttribute\x12P\n" +
 	"\vcommunities\x18\x01 \x03(\v2..api.IP6ExtendedCommunitiesAttribute.CommunityR\vcommunities\x1a\xde\x01\n" +
 	"\tCommunity\x12V\n" +
@@ -6020,7 +6066,7 @@ func file_api_attribute_proto_rawDescGZIP() []byte {
 }
 
 var file_api_attribute_proto_enumTypes = make([]protoimpl.EnumInfo, 3)
-var file_api_attribute_proto_msgTypes = make([]protoimpl.MessageInfo, 83)
+var file_api_attribute_proto_msgTypes = make([]protoimpl.MessageInfo, 84)
 var file_api_attribute_proto_goTypes = []any{
 	(SRV6Behavior)(0),                                 // 0: api.SRV6Behavior
 	(ENLPType)(0),                                     // 1: api.ENLPType
@@ -6066,54 +6112,55 @@ var file_api_attribute_proto_goTypes = []any{
 	(*TunnelEncapAttribute)(nil),                      // 41: api.TunnelEncapAttribute
 	(*IPv6AddressSpecificExtended)(nil),               // 42: api.IPv6AddressSpecificExtended
 	(*RedirectIPv6AddressSpecificExtended)(nil),       // 43: api.RedirectIPv6AddressSpecificExtended
-	(*IP6ExtendedCommunitiesAttribute)(nil),           // 44: api.IP6ExtendedCommunitiesAttribute
-	(*AigpTLVIGPMetric)(nil),                          // 45: api.AigpTLVIGPMetric
-	(*AigpTLVUnknown)(nil),                            // 46: api.AigpTLVUnknown
-	(*AigpAttribute)(nil),                             // 47: api.AigpAttribute
-	(*LargeCommunity)(nil),                            // 48: api.LargeCommunity
-	(*LargeCommunitiesAttribute)(nil),                 // 49: api.LargeCommunitiesAttribute
-	(*LsNodeFlags)(nil),                               // 50: api.LsNodeFlags
-	(*LsIGPFlags)(nil),                                // 51: api.LsIGPFlags
-	(*LsSrRange)(nil),                                 // 52: api.LsSrRange
-	(*LsSrCapabilities)(nil),                          // 53: api.LsSrCapabilities
-	(*LsSrLocalBlock)(nil),                            // 54: api.LsSrLocalBlock
-	(*LsAttributeNode)(nil),                           // 55: api.LsAttributeNode
-	(*LsAttributeLink)(nil),                           // 56: api.LsAttributeLink
-	(*LsAttributePrefix)(nil),                         // 57: api.LsAttributePrefix
-	(*LsBgpPeerSegmentSIDFlags)(nil),                  // 58: api.LsBgpPeerSegmentSIDFlags
-	(*LsBgpPeerSegmentSID)(nil),                       // 59: api.LsBgpPeerSegmentSID
-	(*LsAttributeBgpPeerSegment)(nil),                 // 60: api.LsAttributeBgpPeerSegment
-	(*LsSrv6EndXSID)(nil),                             // 61: api.LsSrv6EndXSID
-	(*LsSrv6SIDStructure)(nil),                        // 62: api.LsSrv6SIDStructure
-	(*LsSrv6EndpointBehavior)(nil),                    // 63: api.LsSrv6EndpointBehavior
-	(*LsSrv6BgpPeerNodeSID)(nil),                      // 64: api.LsSrv6BgpPeerNodeSID
-	(*LsAttributeSrv6SID)(nil),                        // 65: api.LsAttributeSrv6SID
-	(*LsAttribute)(nil),                               // 66: api.LsAttribute
-	(*UnknownAttribute)(nil),                          // 67: api.UnknownAttribute
-	(*SRv6StructureSubSubTLV)(nil),                    // 68: api.SRv6StructureSubSubTLV
-	(*SRv6SubSubTLV)(nil),                             // 69: api.SRv6SubSubTLV
-	(*SRv6SubSubTLVs)(nil),                            // 70: api.SRv6SubSubTLVs
-	(*SRv6SIDFlags)(nil),                              // 71: api.SRv6SIDFlags
-	(*SRv6InformationSubTLV)(nil),                     // 72: api.SRv6InformationSubTLV
-	(*SRv6SubTLV)(nil),                                // 73: api.SRv6SubTLV
-	(*SRv6SubTLVs)(nil),                               // 74: api.SRv6SubTLVs
-	(*SRv6L3ServiceTLV)(nil),                          // 75: api.SRv6L3ServiceTLV
-	(*SRv6L2ServiceTLV)(nil),                          // 76: api.SRv6L2ServiceTLV
-	(*PrefixSID)(nil),                                 // 77: api.PrefixSID
-	(*TunnelEncapSubTLVSRSegmentList_Segment)(nil),    // 78: api.TunnelEncapSubTLVSRSegmentList.Segment
-	(*TunnelEncapTLV_TLV)(nil),                        // 79: api.TunnelEncapTLV.TLV
-	(*IP6ExtendedCommunitiesAttribute_Community)(nil), // 80: api.IP6ExtendedCommunitiesAttribute.Community
-	(*AigpAttribute_TLV)(nil),                         // 81: api.AigpAttribute.TLV
-	nil,                                               // 82: api.SRv6InformationSubTLV.SubSubTlvsEntry
-	nil,                                               // 83: api.SRv6L3ServiceTLV.SubTlvsEntry
-	nil,                                               // 84: api.SRv6L2ServiceTLV.SubTlvsEntry
-	(*PrefixSID_TLV)(nil),                             // 85: api.PrefixSID.TLV
-	(*Family)(nil),                                    // 86: api.Family
-	(*NLRI)(nil),                                      // 87: api.NLRI
-	(*ExtendedCommunity)(nil),                         // 88: api.ExtendedCommunity
+	(*RedirectIPExtended)(nil),                        // 44: api.RedirectIPExtended
+	(*IP6ExtendedCommunitiesAttribute)(nil),           // 45: api.IP6ExtendedCommunitiesAttribute
+	(*AigpTLVIGPMetric)(nil),                          // 46: api.AigpTLVIGPMetric
+	(*AigpTLVUnknown)(nil),                            // 47: api.AigpTLVUnknown
+	(*AigpAttribute)(nil),                             // 48: api.AigpAttribute
+	(*LargeCommunity)(nil),                            // 49: api.LargeCommunity
+	(*LargeCommunitiesAttribute)(nil),                 // 50: api.LargeCommunitiesAttribute
+	(*LsNodeFlags)(nil),                               // 51: api.LsNodeFlags
+	(*LsIGPFlags)(nil),                                // 52: api.LsIGPFlags
+	(*LsSrRange)(nil),                                 // 53: api.LsSrRange
+	(*LsSrCapabilities)(nil),                          // 54: api.LsSrCapabilities
+	(*LsSrLocalBlock)(nil),                            // 55: api.LsSrLocalBlock
+	(*LsAttributeNode)(nil),                           // 56: api.LsAttributeNode
+	(*LsAttributeLink)(nil),                           // 57: api.LsAttributeLink
+	(*LsAttributePrefix)(nil),                         // 58: api.LsAttributePrefix
+	(*LsBgpPeerSegmentSIDFlags)(nil),                  // 59: api.LsBgpPeerSegmentSIDFlags
+	(*LsBgpPeerSegmentSID)(nil),                       // 60: api.LsBgpPeerSegmentSID
+	(*LsAttributeBgpPeerSegment)(nil),                 // 61: api.LsAttributeBgpPeerSegment
+	(*LsSrv6EndXSID)(nil),                             // 62: api.LsSrv6EndXSID
+	(*LsSrv6SIDStructure)(nil),                        // 63: api.LsSrv6SIDStructure
+	(*LsSrv6EndpointBehavior)(nil),                    // 64: api.LsSrv6EndpointBehavior
+	(*LsSrv6BgpPeerNodeSID)(nil),                      // 65: api.LsSrv6BgpPeerNodeSID
+	(*LsAttributeSrv6SID)(nil),                        // 66: api.LsAttributeSrv6SID
+	(*LsAttribute)(nil),                               // 67: api.LsAttribute
+	(*UnknownAttribute)(nil),                          // 68: api.UnknownAttribute
+	(*SRv6StructureSubSubTLV)(nil),                    // 69: api.SRv6StructureSubSubTLV
+	(*SRv6SubSubTLV)(nil),                             // 70: api.SRv6SubSubTLV
+	(*SRv6SubSubTLVs)(nil),                            // 71: api.SRv6SubSubTLVs
+	(*SRv6SIDFlags)(nil),                              // 72: api.SRv6SIDFlags
+	(*SRv6InformationSubTLV)(nil),                     // 73: api.SRv6InformationSubTLV
+	(*SRv6SubTLV)(nil),                                // 74: api.SRv6SubTLV
+	(*SRv6SubTLVs)(nil),                               // 75: api.SRv6SubTLVs
+	(*SRv6L3ServiceTLV)(nil),                          // 76: api.SRv6L3ServiceTLV
+	(*SRv6L2ServiceTLV)(nil),                          // 77: api.SRv6L2ServiceTLV
+	(*PrefixSID)(nil),                                 // 78: api.PrefixSID
+	(*TunnelEncapSubTLVSRSegmentList_Segment)(nil),    // 79: api.TunnelEncapSubTLVSRSegmentList.Segment
+	(*TunnelEncapTLV_TLV)(nil),                        // 80: api.TunnelEncapTLV.TLV
+	(*IP6ExtendedCommunitiesAttribute_Community)(nil), // 81: api.IP6ExtendedCommunitiesAttribute.Community
+	(*AigpAttribute_TLV)(nil),                         // 82: api.AigpAttribute.TLV
+	nil,                                               // 83: api.SRv6InformationSubTLV.SubSubTlvsEntry
+	nil,                                               // 84: api.SRv6L3ServiceTLV.SubTlvsEntry
+	nil,                                               // 85: api.SRv6L2ServiceTLV.SubTlvsEntry
+	(*PrefixSID_TLV)(nil),                             // 86: api.PrefixSID.TLV
+	(*Family)(nil),                                    // 87: api.Family
+	(*NLRI)(nil),                                      // 88: api.NLRI
+	(*ExtendedCommunity)(nil),                         // 89: api.ExtendedCommunity
 }
 var file_api_attribute_proto_depIdxs = []int32{
-	67, // 0: api.Attribute.unknown:type_name -> api.UnknownAttribute
+	68, // 0: api.Attribute.unknown:type_name -> api.UnknownAttribute
 	4,  // 1: api.Attribute.origin:type_name -> api.OriginAttribute
 	6,  // 2: api.Attribute.as_path:type_name -> api.AsPathAttribute
 	7,  // 3: api.Attribute.next_hop:type_name -> api.NextHopAttribute
@@ -6131,18 +6178,18 @@ var file_api_attribute_proto_depIdxs = []int32{
 	19, // 15: api.Attribute.as4_aggregator:type_name -> api.As4AggregatorAttribute
 	20, // 16: api.Attribute.pmsi_tunnel:type_name -> api.PmsiTunnelAttribute
 	41, // 17: api.Attribute.tunnel_encap:type_name -> api.TunnelEncapAttribute
-	44, // 18: api.Attribute.ip6_extended_communities:type_name -> api.IP6ExtendedCommunitiesAttribute
-	47, // 19: api.Attribute.aigp:type_name -> api.AigpAttribute
-	49, // 20: api.Attribute.large_communities:type_name -> api.LargeCommunitiesAttribute
-	66, // 21: api.Attribute.ls:type_name -> api.LsAttribute
-	77, // 22: api.Attribute.prefix_sid:type_name -> api.PrefixSID
+	45, // 18: api.Attribute.ip6_extended_communities:type_name -> api.IP6ExtendedCommunitiesAttribute
+	48, // 19: api.Attribute.aigp:type_name -> api.AigpAttribute
+	50, // 20: api.Attribute.large_communities:type_name -> api.LargeCommunitiesAttribute
+	67, // 21: api.Attribute.ls:type_name -> api.LsAttribute
+	78, // 22: api.Attribute.prefix_sid:type_name -> api.PrefixSID
 	2,  // 23: api.AsSegment.type:type_name -> api.AsSegment.Type
 	5,  // 24: api.AsPathAttribute.segments:type_name -> api.AsSegment
-	86, // 25: api.MpReachNLRIAttribute.family:type_name -> api.Family
-	87, // 26: api.MpReachNLRIAttribute.nlris:type_name -> api.NLRI
-	86, // 27: api.MpUnreachNLRIAttribute.family:type_name -> api.Family
-	87, // 28: api.MpUnreachNLRIAttribute.nlris:type_name -> api.NLRI
-	88, // 29: api.ExtendedCommunitiesAttribute.communities:type_name -> api.ExtendedCommunity
+	87, // 25: api.MpReachNLRIAttribute.family:type_name -> api.Family
+	88, // 26: api.MpReachNLRIAttribute.nlris:type_name -> api.NLRI
+	87, // 27: api.MpUnreachNLRIAttribute.family:type_name -> api.Family
+	88, // 28: api.MpUnreachNLRIAttribute.nlris:type_name -> api.NLRI
+	89, // 29: api.ExtendedCommunitiesAttribute.communities:type_name -> api.ExtendedCommunity
 	5,  // 30: api.As4PathAttribute.segments:type_name -> api.AsSegment
 	28, // 31: api.TunnelEncapSubTLVSRBindingSID.sr_binding_sid:type_name -> api.SRBindingSID
 	30, // 32: api.TunnelEncapSubTLVSRBindingSID.srv6_binding_sid:type_name -> api.SRv6BindingSID
@@ -6153,41 +6200,41 @@ var file_api_attribute_proto_depIdxs = []int32{
 	33, // 37: api.SegmentTypeB.flags:type_name -> api.SegmentFlags
 	29, // 38: api.SegmentTypeB.endpoint_behavior_structure:type_name -> api.SRv6EndPointBehavior
 	32, // 39: api.TunnelEncapSubTLVSRSegmentList.weight:type_name -> api.SRWeight
-	78, // 40: api.TunnelEncapSubTLVSRSegmentList.segments:type_name -> api.TunnelEncapSubTLVSRSegmentList.Segment
-	79, // 41: api.TunnelEncapTLV.tlvs:type_name -> api.TunnelEncapTLV.TLV
+	79, // 40: api.TunnelEncapSubTLVSRSegmentList.segments:type_name -> api.TunnelEncapSubTLVSRSegmentList.Segment
+	80, // 41: api.TunnelEncapTLV.tlvs:type_name -> api.TunnelEncapTLV.TLV
 	40, // 42: api.TunnelEncapAttribute.tlvs:type_name -> api.TunnelEncapTLV
-	80, // 43: api.IP6ExtendedCommunitiesAttribute.communities:type_name -> api.IP6ExtendedCommunitiesAttribute.Community
-	81, // 44: api.AigpAttribute.tlvs:type_name -> api.AigpAttribute.TLV
-	48, // 45: api.LargeCommunitiesAttribute.communities:type_name -> api.LargeCommunity
-	52, // 46: api.LsSrCapabilities.ranges:type_name -> api.LsSrRange
-	52, // 47: api.LsSrLocalBlock.ranges:type_name -> api.LsSrRange
-	50, // 48: api.LsAttributeNode.flags:type_name -> api.LsNodeFlags
-	53, // 49: api.LsAttributeNode.sr_capabilities:type_name -> api.LsSrCapabilities
-	54, // 50: api.LsAttributeNode.sr_local_block:type_name -> api.LsSrLocalBlock
-	61, // 51: api.LsAttributeLink.srv6_end_x_sid:type_name -> api.LsSrv6EndXSID
-	51, // 52: api.LsAttributePrefix.igp_flags:type_name -> api.LsIGPFlags
-	58, // 53: api.LsBgpPeerSegmentSID.flags:type_name -> api.LsBgpPeerSegmentSIDFlags
-	59, // 54: api.LsAttributeBgpPeerSegment.bgp_peer_node_sid:type_name -> api.LsBgpPeerSegmentSID
-	59, // 55: api.LsAttributeBgpPeerSegment.bgp_peer_adjacency_sid:type_name -> api.LsBgpPeerSegmentSID
-	59, // 56: api.LsAttributeBgpPeerSegment.bgp_peer_set_sid:type_name -> api.LsBgpPeerSegmentSID
-	62, // 57: api.LsSrv6EndXSID.srv6_sid_structure:type_name -> api.LsSrv6SIDStructure
-	62, // 58: api.LsAttributeSrv6SID.srv6_sid_structure:type_name -> api.LsSrv6SIDStructure
-	63, // 59: api.LsAttributeSrv6SID.srv6_endpoint_behavior:type_name -> api.LsSrv6EndpointBehavior
-	64, // 60: api.LsAttributeSrv6SID.srv6_bgp_peer_node_sid:type_name -> api.LsSrv6BgpPeerNodeSID
-	55, // 61: api.LsAttribute.node:type_name -> api.LsAttributeNode
-	56, // 62: api.LsAttribute.link:type_name -> api.LsAttributeLink
-	57, // 63: api.LsAttribute.prefix:type_name -> api.LsAttributePrefix
-	60, // 64: api.LsAttribute.bgp_peer_segment:type_name -> api.LsAttributeBgpPeerSegment
-	65, // 65: api.LsAttribute.srv6_sid:type_name -> api.LsAttributeSrv6SID
-	68, // 66: api.SRv6SubSubTLV.structure:type_name -> api.SRv6StructureSubSubTLV
-	69, // 67: api.SRv6SubSubTLVs.tlvs:type_name -> api.SRv6SubSubTLV
-	71, // 68: api.SRv6InformationSubTLV.flags:type_name -> api.SRv6SIDFlags
-	82, // 69: api.SRv6InformationSubTLV.sub_sub_tlvs:type_name -> api.SRv6InformationSubTLV.SubSubTlvsEntry
-	72, // 70: api.SRv6SubTLV.information:type_name -> api.SRv6InformationSubTLV
-	73, // 71: api.SRv6SubTLVs.tlvs:type_name -> api.SRv6SubTLV
-	83, // 72: api.SRv6L3ServiceTLV.sub_tlvs:type_name -> api.SRv6L3ServiceTLV.SubTlvsEntry
-	84, // 73: api.SRv6L2ServiceTLV.sub_tlvs:type_name -> api.SRv6L2ServiceTLV.SubTlvsEntry
-	85, // 74: api.PrefixSID.tlvs:type_name -> api.PrefixSID.TLV
+	81, // 43: api.IP6ExtendedCommunitiesAttribute.communities:type_name -> api.IP6ExtendedCommunitiesAttribute.Community
+	82, // 44: api.AigpAttribute.tlvs:type_name -> api.AigpAttribute.TLV
+	49, // 45: api.LargeCommunitiesAttribute.communities:type_name -> api.LargeCommunity
+	53, // 46: api.LsSrCapabilities.ranges:type_name -> api.LsSrRange
+	53, // 47: api.LsSrLocalBlock.ranges:type_name -> api.LsSrRange
+	51, // 48: api.LsAttributeNode.flags:type_name -> api.LsNodeFlags
+	54, // 49: api.LsAttributeNode.sr_capabilities:type_name -> api.LsSrCapabilities
+	55, // 50: api.LsAttributeNode.sr_local_block:type_name -> api.LsSrLocalBlock
+	62, // 51: api.LsAttributeLink.srv6_end_x_sid:type_name -> api.LsSrv6EndXSID
+	52, // 52: api.LsAttributePrefix.igp_flags:type_name -> api.LsIGPFlags
+	59, // 53: api.LsBgpPeerSegmentSID.flags:type_name -> api.LsBgpPeerSegmentSIDFlags
+	60, // 54: api.LsAttributeBgpPeerSegment.bgp_peer_node_sid:type_name -> api.LsBgpPeerSegmentSID
+	60, // 55: api.LsAttributeBgpPeerSegment.bgp_peer_adjacency_sid:type_name -> api.LsBgpPeerSegmentSID
+	60, // 56: api.LsAttributeBgpPeerSegment.bgp_peer_set_sid:type_name -> api.LsBgpPeerSegmentSID
+	63, // 57: api.LsSrv6EndXSID.srv6_sid_structure:type_name -> api.LsSrv6SIDStructure
+	63, // 58: api.LsAttributeSrv6SID.srv6_sid_structure:type_name -> api.LsSrv6SIDStructure
+	64, // 59: api.LsAttributeSrv6SID.srv6_endpoint_behavior:type_name -> api.LsSrv6EndpointBehavior
+	65, // 60: api.LsAttributeSrv6SID.srv6_bgp_peer_node_sid:type_name -> api.LsSrv6BgpPeerNodeSID
+	56, // 61: api.LsAttribute.node:type_name -> api.LsAttributeNode
+	57, // 62: api.LsAttribute.link:type_name -> api.LsAttributeLink
+	58, // 63: api.LsAttribute.prefix:type_name -> api.LsAttributePrefix
+	61, // 64: api.LsAttribute.bgp_peer_segment:type_name -> api.LsAttributeBgpPeerSegment
+	66, // 65: api.LsAttribute.srv6_sid:type_name -> api.LsAttributeSrv6SID
+	69, // 66: api.SRv6SubSubTLV.structure:type_name -> api.SRv6StructureSubSubTLV
+	70, // 67: api.SRv6SubSubTLVs.tlvs:type_name -> api.SRv6SubSubTLV
+	72, // 68: api.SRv6InformationSubTLV.flags:type_name -> api.SRv6SIDFlags
+	83, // 69: api.SRv6InformationSubTLV.sub_sub_tlvs:type_name -> api.SRv6InformationSubTLV.SubSubTlvsEntry
+	73, // 70: api.SRv6SubTLV.information:type_name -> api.SRv6InformationSubTLV
+	74, // 71: api.SRv6SubTLVs.tlvs:type_name -> api.SRv6SubTLV
+	84, // 72: api.SRv6L3ServiceTLV.sub_tlvs:type_name -> api.SRv6L3ServiceTLV.SubTlvsEntry
+	85, // 73: api.SRv6L2ServiceTLV.sub_tlvs:type_name -> api.SRv6L2ServiceTLV.SubTlvsEntry
+	86, // 74: api.PrefixSID.tlvs:type_name -> api.PrefixSID.TLV
 	34, // 75: api.TunnelEncapSubTLVSRSegmentList.Segment.a:type_name -> api.SegmentTypeA
 	35, // 76: api.TunnelEncapSubTLVSRSegmentList.Segment.b:type_name -> api.SegmentTypeB
 	39, // 77: api.TunnelEncapTLV.TLV.unknown:type_name -> api.TunnelEncapSubTLVUnknown
@@ -6204,13 +6251,13 @@ var file_api_attribute_proto_depIdxs = []int32{
 	36, // 88: api.TunnelEncapTLV.TLV.sr_segment_list:type_name -> api.TunnelEncapSubTLVSRSegmentList
 	42, // 89: api.IP6ExtendedCommunitiesAttribute.Community.ipv6_address_specific:type_name -> api.IPv6AddressSpecificExtended
 	43, // 90: api.IP6ExtendedCommunitiesAttribute.Community.redirect_ipv6_address_specific:type_name -> api.RedirectIPv6AddressSpecificExtended
-	46, // 91: api.AigpAttribute.TLV.unknown:type_name -> api.AigpTLVUnknown
-	45, // 92: api.AigpAttribute.TLV.igp_metric:type_name -> api.AigpTLVIGPMetric
-	70, // 93: api.SRv6InformationSubTLV.SubSubTlvsEntry.value:type_name -> api.SRv6SubSubTLVs
-	74, // 94: api.SRv6L3ServiceTLV.SubTlvsEntry.value:type_name -> api.SRv6SubTLVs
-	74, // 95: api.SRv6L2ServiceTLV.SubTlvsEntry.value:type_name -> api.SRv6SubTLVs
-	75, // 96: api.PrefixSID.TLV.l3_service:type_name -> api.SRv6L3ServiceTLV
-	76, // 97: api.PrefixSID.TLV.l2_service:type_name -> api.SRv6L2ServiceTLV
+	47, // 91: api.AigpAttribute.TLV.unknown:type_name -> api.AigpTLVUnknown
+	46, // 92: api.AigpAttribute.TLV.igp_metric:type_name -> api.AigpTLVIGPMetric
+	71, // 93: api.SRv6InformationSubTLV.SubSubTlvsEntry.value:type_name -> api.SRv6SubSubTLVs
+	75, // 94: api.SRv6L3ServiceTLV.SubTlvsEntry.value:type_name -> api.SRv6SubTLVs
+	75, // 95: api.SRv6L2ServiceTLV.SubTlvsEntry.value:type_name -> api.SRv6SubTLVs
+	76, // 96: api.PrefixSID.TLV.l3_service:type_name -> api.SRv6L3ServiceTLV
+	77, // 97: api.PrefixSID.TLV.l2_service:type_name -> api.SRv6L2ServiceTLV
 	98, // [98:98] is the sub-list for method output_type
 	98, // [98:98] is the sub-list for method input_type
 	98, // [98:98] is the sub-list for extension type_name
@@ -6255,17 +6302,17 @@ func file_api_attribute_proto_init() {
 		(*TunnelEncapSubTLVSRBindingSID_SrBindingSid)(nil),
 		(*TunnelEncapSubTLVSRBindingSID_Srv6BindingSid)(nil),
 	}
-	file_api_attribute_proto_msgTypes[66].OneofWrappers = []any{
+	file_api_attribute_proto_msgTypes[67].OneofWrappers = []any{
 		(*SRv6SubSubTLV_Structure)(nil),
 	}
-	file_api_attribute_proto_msgTypes[70].OneofWrappers = []any{
+	file_api_attribute_proto_msgTypes[71].OneofWrappers = []any{
 		(*SRv6SubTLV_Information)(nil),
 	}
-	file_api_attribute_proto_msgTypes[75].OneofWrappers = []any{
+	file_api_attribute_proto_msgTypes[76].OneofWrappers = []any{
 		(*TunnelEncapSubTLVSRSegmentList_Segment_A)(nil),
 		(*TunnelEncapSubTLVSRSegmentList_Segment_B)(nil),
 	}
-	file_api_attribute_proto_msgTypes[76].OneofWrappers = []any{
+	file_api_attribute_proto_msgTypes[77].OneofWrappers = []any{
 		(*TunnelEncapTLV_TLV_Unknown)(nil),
 		(*TunnelEncapTLV_TLV_Encapsulation)(nil),
 		(*TunnelEncapTLV_TLV_Protocol)(nil),
@@ -6279,15 +6326,15 @@ func file_api_attribute_proto_init() {
 		(*TunnelEncapTLV_TLV_SrBindingSid)(nil),
 		(*TunnelEncapTLV_TLV_SrSegmentList)(nil),
 	}
-	file_api_attribute_proto_msgTypes[77].OneofWrappers = []any{
+	file_api_attribute_proto_msgTypes[78].OneofWrappers = []any{
 		(*IP6ExtendedCommunitiesAttribute_Community_Ipv6AddressSpecific)(nil),
 		(*IP6ExtendedCommunitiesAttribute_Community_RedirectIpv6AddressSpecific)(nil),
 	}
-	file_api_attribute_proto_msgTypes[78].OneofWrappers = []any{
+	file_api_attribute_proto_msgTypes[79].OneofWrappers = []any{
 		(*AigpAttribute_TLV_Unknown)(nil),
 		(*AigpAttribute_TLV_IgpMetric)(nil),
 	}
-	file_api_attribute_proto_msgTypes[82].OneofWrappers = []any{
+	file_api_attribute_proto_msgTypes[83].OneofWrappers = []any{
 		(*PrefixSID_TLV_L3Service)(nil),
 		(*PrefixSID_TLV_L2Service)(nil),
 	}
@@ -6297,7 +6344,7 @@ func file_api_attribute_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_api_attribute_proto_rawDesc), len(file_api_attribute_proto_rawDesc)),
 			NumEnums:      3,
-			NumMessages:   83,
+			NumMessages:   84,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

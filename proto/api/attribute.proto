@@ -337,6 +337,10 @@ message RedirectIPv6AddressSpecificExtended {
   uint32 local_admin = 2;
 }
 
+message RedirectIPExtended {
+  string address = 1;
+}
+
 message IP6ExtendedCommunitiesAttribute {
   message Community {
     oneof extcom {
