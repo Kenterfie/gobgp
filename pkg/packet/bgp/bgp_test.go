@@ -567,6 +567,28 @@ func Test_FlowSpecExtended(t *testing.T) {
 	assert.Equal(m1, m2)
 }
 
+func Test_RedirectIPExtended(t *testing.T) {
+	assert := assert.New(t)
+	exts := make([]ExtendedCommunityInterface, 0)
+	exts = append(exts, NewRedirectIPExtended("192.168.1.100"))
+	m1 := NewPathAttributeExtendedCommunities(exts)
+	buf1, err := m1.Serialize()
+	require.NoError(t, err)
+
+	m2 := NewPathAttributeExtendedCommunities(nil)
+	err = m2.DecodeFromBytes(buf1)
+	require.NoError(t, err)
+
+	_, err = m2.Serialize()
+	require.NoError(t, err)
+
+	assert.Equal(m1, m2)
+	
+	// Test string representation
+	redirectIP := NewRedirectIPExtended("10.0.0.1")
+	assert.Equal("redirect-ip: 10.0.0.1", redirectIP.String())
+}
+
 func Test_IP6FlowSpecExtended(t *testing.T) {
 	exts := make([]ExtendedCommunityInterface, 0)
 	ex, _ := NewRedirectIPv6AddressSpecificExtended(netip.MustParseAddr("2001:db8::68"), 1000)
