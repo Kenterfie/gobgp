@@ -44,6 +44,7 @@ const (
 	ctDiscard
 	ctRate
 	ctRedirect
+	ctRedirectIP
 	ctMark
 	ctAction
 	ctRT
@@ -66,6 +67,7 @@ var extCommNameMap = map[extCommType]string{
 	ctDiscard:        "discard",
 	ctRate:           "rate-limit",
 	ctRedirect:       "redirect",
+	ctRedirectIP:     "redirect-ip",
 	ctMark:           "mark",
 	ctAction:         "action",
 	ctRT:             "rt",
@@ -88,6 +90,7 @@ var extCommValueMap = map[string]extCommType{
 	extCommNameMap[ctDiscard]:        ctDiscard,
 	extCommNameMap[ctRate]:           ctRate,
 	extCommNameMap[ctRedirect]:       ctRedirect,
+	extCommNameMap[ctRedirectIP]:     ctRedirectIP,
 	extCommNameMap[ctMark]:           ctMark,
 	extCommNameMap[ctAction]:         ctAction,
 	extCommNameMap[ctRT]:             ctRT,
@@ -151,6 +154,18 @@ func redirectParser(args []string) ([]bgp.ExtendedCommunityInterface, error) {
 		return []bgp.ExtendedCommunityInterface{ex}, nil
 	}
 	return nil, fmt.Errorf("invalid redirect")
+}
+
+func redirectIPParser(args []string) ([]bgp.ExtendedCommunityInterface, error) {
+	if len(args) < 2 || args[0] != extCommNameMap[ctRedirectIP] {
+		return nil, fmt.Errorf("invalid redirect-ip")
+	}
+	ip := args[1]
+	// Validate it's a valid IPv4 address  
+	if net.ParseIP(ip) == nil || net.ParseIP(ip).To4() == nil {
+		return nil, fmt.Errorf("invalid IPv4 address for redirect-ip: %s", ip)
+	}
+	return []bgp.ExtendedCommunityInterface{bgp.NewRedirectIPExtended(ip)}, nil
 }
 
 func markParser(args []string) ([]bgp.ExtendedCommunityInterface, error) {
@@ -392,6 +407,7 @@ var extCommParserMap = map[extCommType]func([]string) ([]bgp.ExtendedCommunityIn
 	ctDiscard:        rateLimitParser,
 	ctRate:           rateLimitParser,
 	ctRedirect:       redirectParser,
+	ctRedirectIP:     redirectIPParser,
 	ctMark:           markParser,
 	ctAction:         actionParser,
 	ctRT:             rtParser,
